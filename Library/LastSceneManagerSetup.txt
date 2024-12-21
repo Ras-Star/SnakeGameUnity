@@ -1,0 +1,13 @@
+sceneSetups:
+- path: Assets/Scene_Load.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scene_Menu.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scene_Play.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0
