@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class SnakeBehaviour : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class SnakeBehaviour : MonoBehaviour
 
     private Vector2 moveDirection = Vector2.right;  // Initial movement direction (right).
     private bool isGrowing = false;                 // Whether the snake is growing after eating food.
-    private int foodEaten = 0;                     // Counter for the number of food pieces eaten.
+    public int foodEaten = 0;                     // Counter for the number of food pieces eaten.
 
     void Start()
     {
