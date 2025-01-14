@@ -86,7 +86,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 10
-  lifeTime: 60
+  lifeTime: 10
+  isBonusFood: 1
 --- !u!1 &1870502517917278077
 GameObject:
   m_ObjectHideFlags: 0
