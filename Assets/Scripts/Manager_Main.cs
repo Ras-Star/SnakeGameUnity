@@ -1,48 +1,53 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Manager_Main : MonoBehaviour
 {
-    static public Manager_Main Instance;
+    public static Manager_Main Instance { get; private set; }
+    public static bool IsSceneLoading = false;
 
     private void Awake()
     {
-        if (!Instance)
+        if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else 
+        else
         {
-            Debug.LogError($"{this} should be singleton.");
+            Debug.LogWarning($"{this} already exists. Destroying duplicate.");
             Destroy(gameObject);
+            return;
         }
     }
-    bool _isDone = false;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         StartCoroutine(Process_Main());
     }
 
-    IEnumerator Process_Main()
+    private IEnumerator Process_Main()
     {
         yield return new WaitForSeconds(3f);
         GoScene(1);
     }
 
-
-    public static void GoScene(int _sceneIndex)
+    public static void GoScene(int Scene_Play)
     {
-        SceneManager.LoadScene(_sceneIndex);
-    }  
+        if (IsSceneLoading || Instance == null)
+        {
+            Debug.LogError("Scene loading is already in progress or Manager_Main instance is null.");
+            return;
+        }
+        Instance.StartCoroutine(Instance.Process_GoScene(Scene_Play));
+    }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator Process_GoScene(int Scene_Play)
     {
-
+        IsSceneLoading = true;
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(Scene_Play);
+        IsSceneLoading = false;
     }
 }

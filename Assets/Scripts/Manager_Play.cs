@@ -51,6 +51,7 @@ public class Manager_Play : MonoBehaviour
     }
     #endregion
 
+
     private void Awake()
     {
         if (!Instance)

@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ca0c142d80fb44eba263195bd25ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.96
+  moveSpeed: 1.2
   lerpSpeed: 1.2
   currentDegree: 0
   targetTran: {fileID: 0}
@@ -134,8 +134,8 @@ MonoBehaviour:
   protectTime: 1
   m_AnimAxis: {fileID: 8165772480995834718}
   m_Image: {fileID: 3783233986650710876}
-  Sprite_Body: {fileID: 21300000, guid: 555d316d693c6fd409f6dbaddb5b8c50, type: 3}
-  Sprite_Tail: {fileID: 21300000, guid: 555d316d693c6fd409f6dbaddb5b8c50, type: 3}
+  Sprite_Body: {fileID: 21300000, guid: 8e799c2009841d94c855d1766f8d4995, type: 3}
+  Sprite_Tail: {fileID: 21300000, guid: c76d1d6f639ff9a4c9d70fc1eb890ff3, type: 3}
 --- !u!58 &8766609155457914078
 CircleCollider2D:
   m_ObjectHideFlags: 0

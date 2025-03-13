@@ -49,8 +49,14 @@ public class Object_Snake : MonoBehaviour
             m_AnimAxis.localEulerAngles = Vector3.forward * currentDegree;
         }
 
+
         float _rad = currentDegree * Mathf.Deg2Rad;
         transform.position += new Vector3(Mathf.Cos(_rad), Mathf.Sin(_rad), 0) * moveSpeed * Time.deltaTime;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
     }
 
     public void Initialize()
